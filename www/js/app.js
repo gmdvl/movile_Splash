@@ -22,3 +22,19 @@ angular.module('starter', ['ionic'])
     }
   });
 })
+
+.controller('PopupCtrl',function($scope, $ionicPopup) {
+    $scope.Data={};
+    //var str="Soy "+$scope.Data.Text;
+   // An alert dialog
+   $scope.showAlert = function() {
+     var alertPopup = $ionicPopup.alert({
+       title: '',
+       template: "Soy "+$scope.Data.Text
+     });
+     alertPopup.then(function(res) {
+       console.log('Thank you for not eating my delicious ice cream cone');
+       //console.log($scope.Data.Text);
+     });
+   };
+});
